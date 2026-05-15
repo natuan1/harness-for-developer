@@ -4,7 +4,7 @@
   "description": "Hybrid harness engineering for AI coding agents — combines spec-driven development (Speckit), phased lifecycle (BMAD), and operational harness patterns (harness-creator).",
   "license": "MIT",
   "author": "Nguyen Anh Tuan",
-  "repository": "https://github.com/nguyenanhtuan21/harness-for-developer",
+  "repository": "https://github.com/natuan1/harness-for-developer",
   "languages": ["en"],
   "compatibility": {
     "minCliVersion": "0.1.0",
