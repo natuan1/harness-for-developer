@@ -1,147 +1,183 @@
-<p align="center">
-  <strong>Harness for Developer</strong><br>
-  <em>Lam cho AI coding agent cua ban dung nhu mot developer that su.</em>
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="version">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="license">
-  <img src="https://img.shields.io/badge/compatible-Claude%20Code%20%7C%20Codex%20%7C%20Cursor%20%7C%20Windsurf-purple" alt="compatibility">
-</p>
+# Harness for Developer
 
----
+**Make your AI coding agent work like a real developer.**
 
-## Xin chao, toi la Nguyen Anh Tuan
+Spec-driven, phased harness engineering for AI coding agents.
 
-Toi la mot developer. Toi dung AI coding agents moi ngay — Claude Code, Cursor, Windsurf. Va toi da phat hien mot van de:
+[![version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/natuan1/harness-for-developer)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![compatibility](https://img.shields.io/badge/compatible-Claude%20Code%20%7C%20Codex%20%7C%20Cursor%20%7C%20Windsurf-purple)](https://github.com/natuan1/harness-for-developer)
 
-**AI agents khoi nhanh, nhung cham dut kem.**
-
-Chung co the viet code nhanh chang, nhung:
-- Quen mat ngu canh giua cac phien lam viec
-- Khong biet khi nao nen dung, khi nao nen hoi
-- Viet code ma khong hieu ro yeu cau
-- Khong co ky luc quyet dinh, khong co verify truoc khi bao "xong"
-
-Do la ly do toi tao ra **Harness for Developer** — mot bo skill giup ban dieu khien AI coding agent nhu mot thanh vien trong team, co ky luat, co quy trinh, co tracerability.
+</div>
 
 ---
 
-## Harness for Developer la gi?
+## Why I Built This
 
-Day la mot **AI agent skill** — mot bo huong dan ma ban tai vao project, va AI agent se tu dong theo dung quy trinh:
+Hi, I'm **Nguyen Anh Tuan**. I use AI coding agents every day — Claude Code, Cursor, Windsurf. And I kept running into the same problem:
+
+**AI agents start fast, but finish poorly.**
+
+They can write code at lightning speed, but they also:
+- Lose context between sessions
+- Don't know when to stop and ask
+- Write code without understanding the requirements
+- Say "done" without actually verifying
+- Over-engineer or scope-creep without anyone noticing
+
+I needed a way to make my AI agents work with **discipline** — the same discipline I'd expect from a good developer on my team. Not more prompting tricks, not better model selection — a **structured workflow** that the agent follows every single time.
+
+That's what **Harness for Developer** is. An AI agent skill you drop into your project that gives your agent:
+
+- **Specs before code** — no more coding without understanding what to build
+- **Phased workflow** — analysis → planning → solutioning → implementation
+- **Implementation gates** — mandatory readiness check before any coding begins
+- **Verification** — tests, type-checks, self-review before marking anything as done
+- **Session continuity** — progress tracking and handoff so nothing is lost between sessions
+
+---
+
+## What It Does
+
+This is an **AI agent skill** — a set of instructions you install in your project. Once installed, your AI agent automatically follows a structured workflow:
 
 ```
-Yeu cau → Phan tich → Dac ta → Thiet ke → Lap trinh → Kiem chung → Hoan thanh
+Request → Analyze → Specify → Design → Implement → Verify → Deliver
 ```
 
-Skill nay ket hop 3 phuong phap da duoc chung minh:
+The skill combines three proven methodologies:
 
-| Nguon gon | Lay gi tu do |
-|-----------|-------------|
-| **harness-creator** | Patterns van hanh: memory, verification, scope control, session continuity |
-| **Speckit** | Spec-driven workflow: specify → clarify → plan → tasks, constitution |
+| Source | What It Contributes |
+|--------|-------------------|
+| **harness-creator** | Operational patterns: memory persistence, verification, scope control, session continuity |
+| **Speckit** | Spec-driven workflow: specify → clarify → plan → tasks, constitution, quality checks |
 | **BMAD Method** | Phased lifecycle: analysis → planning → solutioning → implementation, readiness gates |
 
 ---
 
-## Tai sao ban can no?
+## The Problem It Solves
 
-| Van de | Harness giai quyet the nao |
-|--------|---------------------------|
-| Agent quen context giua session | Session handoff + progress tracking tu dong |
-| Agent code truoc khi hieu yeu cau | Spec-driven: phai co spec truoc khi code |
-| Agent bao "xong" nhung chua xong | Verification checklist bat buoc truoc khi mark done |
-| Agent lam qua nhieu (scope creep) | Constitution + scope control + one feature at a time |
-| Khong biet agent dang o buoc nao | Phase routing + feature-list tracking |
-| Team khong nhat quan giua cac agent | Templates chuan + shared constitution |
+| You know this problem | Here's how the harness fixes it |
+|----------------------|-------------------------------|
+| Agent loses context between sessions | Automatic session handoff + progress tracking |
+| Agent starts coding before understanding requirements | Spec-driven: must have an approved spec before code |
+| Agent says "done" but isn't really done | Mandatory verification checklist before marking complete |
+| Agent keeps adding more features (scope creep) | Constitution + scope control + one feature at a time |
+| No idea what phase the agent is in | Phase routing + feature-list tracking |
+| Team members get inconsistent results from agents | Standardized templates + shared constitution |
 
 ---
 
 ## Quick Start
 
-### 1. Cai dat
+### Install
 
 ```bash
-# Clone repo
-git clone https://github.com/nguyenanhtuan21/harness-for-developer.git
+# Clone
+git clone https://github.com/natuan1/harness-for-developer.git
 
-# Copy skill vao project cua ban
-cp -r harness-for-developer/ /path/to/your-project/.claude/skills/hybrid-harness/
+# Copy into your project
+cp -r harness-for-developer/ your-project/.claude/skills/hybrid-harness/
 ```
 
-### 2. Kich hoat
+### Activate
 
-Mo Claude Code (hoac agent ban su dung) va go:
+Open your AI coding agent and type:
 
 ```
 /hybrid-harness
 ```
 
-Agent se tu dong:
-1. Doc SKILL.md
-2. Hoi ban muon lam gi
-3. Route den dung phase
+The agent will:
+1. Load the skill definition
+2. Ask what you want to do
+3. Route to the correct phase automatically
 
-### 3. Su dung
+### Use
 
-| Ban muon... | Go lenh |
-|-------------|---------|
-| Tao harness moi | `/constitution` → `/specify <mo ta>` |
-| Dinh nghia yeu cau | `/specify <mo ta>` → `/clarify` |
-| Thiet ke kien truc | `/plan` → `/stories` |
-| Bat dau code | `/tasks` → `/implement` → `/verify` |
-| Lam task nho | Quick Flow: `/specify` → `/plan` → `/tasks` |
+| You want to... | Run this |
+|---------------|----------|
+| Create a new harness | `/constitution` → `/specify <description>` |
+| Define requirements | `/specify <description>` → `/clarify` |
+| Design architecture | `/plan` → `/stories` |
+| Start coding | `/tasks` → `/implement` → `/verify` |
+| Do a small task | Quick Flow: `/specify` → `/plan` → `/tasks` |
+
+Full guide: [docs/getting-started.md](docs/getting-started.md)
 
 ---
 
-## 4-Phase Workflow
+## The 4-Phase Workflow
 
 ```
-Phase 1: Analysis (optional)     Phase 2: Planning
-  /brainstorm → /research          /constitution → /specify → /clarify
-          |                                  |
-Phase 3: Solutioning             Phase 4: Implementation
-  /plan → /stories → GATE         /tasks → /implement → /verify
+Phase 1: Analysis (optional)       Phase 2: Planning
+  /brainstorm → /research            /constitution → /specify → /clarify
+           ↓                                    ↓
+Phase 3: Solutioning               Phase 4: Implementation
+  /plan → /stories → GATE           /tasks → /implement → /verify
 ```
 
-### Phase 1: Analysis — Phan tich (tuy chon)
-Khi bat dau project moi hoac yeu cau phuc tap. Brainstorm, research, viet product brief.
+### Phase 1: Analysis
+*Optional — for new projects, unclear requirements, or complex features.*
 
-### Phase 2: Planning — Lap ke hoach (bat buoc)
-**Luon luon phai qua buoc nay.** Tao constitution (nguyen tac bat bien), viet spec, lam ro yeu cau.
+Brainstorm, research, write a product brief.
 
-### Phase 3: Solutioning — Thiet ke giai phap
-Chon tech stack, thiet ke kien truc, chia stories. **Implementation Readiness Gate** — phai PASS moi duoc code.
+### Phase 2: Planning
+*Always required — every feature needs a spec before code.*
 
-### Phase 4: Implementation — Lap trinh
-Code, test, verify. 80% thoi gian o day. Moi task phai verify truoc khi mark done.
+Create a **constitution** (immutable project principles), write feature specs, resolve ambiguities.
 
-### Quick Flow — Cho task nho
+### Phase 3: Solutioning
+*Before any implementation, every time.*
+
+Choose tech stack, design architecture, break features into stories. The **Implementation Readiness Gate** checks that you're actually ready to code:
+
+- All ambiguities resolved?
+- Architecture decisions documented?
+- Feature dependencies mapped?
+- Stories small enough for one session?
+- Constitution constraints addressed?
+
+Result: **PASS** (proceed) / **CONCERNS** (get approval) / **FAIL** (go back)
+
+### Phase 4: Implementation
+*Where you spend 80% of your time.*
+
+Code, test, verify. Each task must pass the verification checklist before being marked done. Session handoff ensures nothing is lost.
+
+### Quick Flow (for small tasks)
+
 ```
 /specify → /plan → /tasks → implement → verify
 ```
-Bo qua Analysis va Planning day du, nhung **van phai qua Gate**.
+
+Skip the full Analysis and Planning phases, but the **gate is still mandatory**.
 
 ---
 
-## Templates (9 file)
+## Templates
 
-| Template | Muc dich |
-|----------|----------|
-| `agents.md` | Entry point cho AI agent — startup protocol, phase router, working rules |
-| `constitution.md` | Nguyen tac bat bien cua project (5-9 articles) |
+Nine production-ready templates included:
+
+| Template | Purpose |
+|----------|---------|
+| `agents.md` | Agent entry point — startup protocol, phase router, working rules, verification checklist |
+| `constitution.md` | Immutable project principles (5–9 articles) |
 | `prd.md` | Product Requirements Document |
-| `architecture.md` | Kien truc + Architecture Decision Records |
-| `feature-list.json` | Tracking features, stories, gate status |
-| `feature-list.schema.json` | JSON Schema cho feature-list |
-| `init.sh` | Bootstrap script |
-| `progress.md` | Session progress log |
-| `session-handoff.md` | Cross-session continuity |
+| `architecture.md` | Architecture overview + Architecture Decision Records |
+| `feature-list.json` | Feature tracking with stories, acceptance criteria, gate status |
+| `feature-list.schema.json` | JSON Schema for feature-list validation |
+| `init.sh` | Bootstrap script with environment checks |
+| `progress.md` | Session progress log with phase tracking |
+| `session-handoff.md` | Cross-session continuity document |
 
 ---
 
-## Cau truc project sau khi ap dung Harness
+## Project Structure After Setup
+
+When you apply the harness to your project, it creates this structure:
 
 ```
 your-project/
@@ -149,121 +185,132 @@ your-project/
 │   ├── CLAUDE.md
 │   └── skills/hybrid-harness/
 ├── docs/
-│   ├── specs/                    # Source of truth
-│   │   ├── constitution.md       # Nguyen tac bat bien
-│   │   ├── prd.md                # Product Requirements
-│   │   ├── architecture.md       # Kien truc + ADRs
+│   ├── specs/                      # Source of truth
+│   │   ├── constitution.md         # Immutable principles
+│   │   ├── prd.md                  # Product requirements
+│   │   ├── architecture.md         # Architecture + ADRs
 │   │   └── features/
-│   │       └── 001-feature/
-│   │           ├── spec.md       # WHAT + WHY
+│   │       └── 001-feature-name/
+│   │           ├── spec.md         # WHAT + WHY
 │   │           ├── clarification.md
-│   │           ├── plan.md       # HOW
-│   │           └── tasks.md      # Implementable tasks
-│   └── harness/                  # Operational
-│       ├── AGENTS.md             # Agent entry point
-│       ├── feature-list.json     # Tracking
-│       ├── progress.md           # Progress log
-│       └── session-handoff.md    # Session handoff
+│   │           ├── plan.md         # HOW
+│   │           └── tasks.md        # Implementable tasks
+│   └── harness/                    # Operational (auto-updated each session)
+│       ├── AGENTS.md               # Agent entry point
+│       ├── feature-list.json       # Tracking
+│       ├── progress.md             # Progress log
+│       └── session-handoff.md      # Session handoff
 ├── init.sh
 └── src/
 ```
 
----
-
-## References (8 patterns)
-
-| Pattern | Nguon | Khi nao doc |
-|---------|-------|------------|
-| Memory Persistence | harness-creator | Agent quen context |
-| Context Engineering | harness-creator | AGENTS.md qua dai |
-| Tool Registry & Safety | harness-creator | Agent can tool restrictions |
-| Multi-Agent Coordination | harness-creator | Nhieu agent lam viec cung luc |
-| Lifecycle & Bootstrap | harness-creator | Setup project moi |
-| Spec-Driven Development | Speckit | Tim hieu spec workflow |
-| Implementation Readiness Gate | BMAD | Gate checklist |
-| Gotchas | All three | Khi gap van de kho doan |
+| Location | Purpose | Updated by |
+|----------|---------|-----------|
+| `docs/specs/` | Source of truth — specs drive code | Human + AI |
+| `docs/harness/` | Operational state — read/written each session | AI (automatic) |
+| `.claude/skills/` | Tooling — installed once, versioned with skill | Developer |
 
 ---
 
-## Vi du thuc te
+## Reference Patterns
 
-Xem [docs/workflow-walkthrough.md](docs/workflow-walkthrough.md) de xem vi du workflow day du tu dau den cuoi.
+Eight deep-dive pattern documents included:
 
----
-
-## Compatible voi
-
-- **Claude Code** (primary — duoc thiet ke cho no)
-- **Codex CLI**
-- **Cursor**
-- **Windsurf**
-- **Bat ky AI coding agent nao** co the doc markdown instructions
-
----
-
-## Khi nao dung / Khong dung
-
-| Dung khi... | Khong dung khi... |
-|-------------|-------------------|
-| Team nho lam phan mem lon | Script mot lan, throwaway code |
-| Can ky luat ma khong quan ly | Prompt engineering, model selection |
-| Muon agent lam viec co tracerability | Project khong dung AI agent |
-| Can spec-driven workflow | Chi can AGENTS.md don gian |
+| Pattern | Source | Read when... |
+|---------|--------|-------------|
+| Memory Persistence | harness-creator | Agent forgets context between sessions |
+| Context Engineering | harness-creator | Your AGENTS.md is getting too long |
+| Tool Registry & Safety | harness-creator | You need tool restrictions for the agent |
+| Multi-Agent Coordination | harness-creator | Multiple agents working simultaneously |
+| Lifecycle & Bootstrap | harness-creator | Setting up a new project |
+| Spec-Driven Development | Speckit | Understanding the spec workflow in depth |
+| Implementation Readiness Gate | BMAD | Using the gate checklist |
+| Gotchas | All three | Debugging non-obvious failure modes |
 
 ---
 
-## Cau truc repo
+## Full Workflow Example
+
+See [docs/workflow-walkthrough.md](docs/workflow-walkthrough.md) for a complete example of building a feature from scratch — from initial idea through spec, architecture, implementation, and verification.
+
+---
+
+## Compatibility
+
+| Agent | Support Level |
+|-------|-------------|
+| **Claude Code** | Primary — designed for this |
+| **Codex CLI** | Full support |
+| **Cursor** | Full support |
+| **Windsurf** | Full support |
+| **Any AI coding agent** | Works if it reads markdown instructions |
+
+---
+
+## When to Use This
+
+| Use it when... | Don't use it when... |
+|---------------|---------------------|
+| Small team building large software | One-off scripts or throwaway code |
+| You need discipline without bureaucracy | You're doing prompt engineering or model selection |
+| You want traceability from spec to code | Your project doesn't use AI agents |
+| Spec-driven workflow matters to you | You just need a quick, simple AGENTS.md |
+| You're tired of agents losing context | |
+
+---
+
+## Repository Structure
 
 ```
 harness-for-developer/
-├── README.md                 # Ban dang doc day
-├── SKILL.md                  # Main skill definition
-├── metadata.json             # Skill metadata
-├── phases/                   # 4-phase workflow docs
-│   ├── 1-analysis/
-│   ├── 2-planning/
-│   ├── 3-solutioning/
-│   └── 4-implementation/
-├── references/               # 8 deep-dive pattern docs
-├── templates/                # 9 scaffold templates
-├── evals/                    # 8 test cases
+├── README.md                      # You are here
+├── SKILL.md                       # Main skill definition (entry point)
+├── metadata.json                  # Skill metadata & triggers
+├── phases/                        # 4-phase workflow documentation
+│   ├── 1-analysis/README.md
+│   ├── 2-planning/README.md
+│   ├── 3-solutioning/README.md
+│   └── 4-implementation/README.md
+├── references/                    # 8 deep-dive pattern docs
+├── templates/                     # 9 scaffold templates
+├── evals/                         # 8 evaluation test cases
 └── docs/
-    ├── getting-started.md    # Huong dan bat dau chi tiet
-    ├── workflow-walkthrough.md  # Vi du workflow day du
-    └── examples/             # Vi du thuc te
+    ├── getting-started.md         # Detailed setup guide
+    ├── workflow-walkthrough.md    # Full workflow example
+    └── examples/
 ```
 
 ---
 
-## Dong gop
+## Contributing
 
-Day la open-source project. Contributions are welcome!
+Contributions are welcome!
 
-1. Fork repo
-2. Tao branch: `git checkout -b feature/your-feature`
-3. Commit: `git commit -m "feat: add your feature"`
-4. Push: `git push origin feature/your-feature`
-5. Tao Pull Request
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "feat: add your feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
 ---
 
-## Tac gia
+## Author
 
-**Nguyen Anh Tuan** — Developer muon lam cho AI coding agents tro nen dang tin cay hon.
+**Nguyen Anh Tuan** — Developer building reliable AI coding workflows.
 
-Neu project nay huu ich cho ban, hay cho no mot star ⭐
+If this project helps you, give it a star.
 
 ---
 
 ## License
 
-MIT — Dung thoai mai, sua doi tu do.
+[MIT](LICENSE) — Use freely, modify freely.
 
 ---
 
-## Credit
+## Credits
 
 - [harness-creator](https://github.com/walkinglabs/learn-harness-engineering) — Operational harness patterns
 - [Speckit](https://speckit.org/) — Spec-driven development methodology
 - [BMAD Method](https://docs.bmad-method.org/) — Phased agile AI-driven development
-- [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/agentic-systems) — Building effective agents
+- [Anthropic — Building Effective Agents](https://docs.anthropic.com/en/docs/build-with-claude/agentic-systems) — Agent design principles
