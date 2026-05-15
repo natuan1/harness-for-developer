@@ -1,0 +1,116 @@
+{
+  "skill_name": "hybrid-harness",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Minimal Harness Creation",
+      "prompt": "I have a new TypeScript + React project with no agent setup. Create a minimal hybrid harness that makes my agent reliable for single-feature development.",
+      "expected_output": "AGENTS.md with phase routing, feature-list.json with spec_path and stories, constitution.md with 5-9 articles, init.sh with harness verification",
+      "files": [],
+      "expectations": [
+        "AGENTS.md includes startup protocol with constitution reading",
+        "AGENTS.md includes phase router (which phase for which request)",
+        "feature-list.json has spec_path, stories, acceptance_criteria, gate_status fields",
+        "constitution.md has 5-9 articles covering spec-first, test-first, scope control",
+        "init.sh checks for docs/specs and docs/harness directories",
+        "All files organized in docs/harness/ and docs/specs/ structure"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Session Continuity Setup",
+      "prompt": "My agent forgets everything between sessions. Set up persistent memory and session handoff for multi-day feature work.",
+      "expected_output": "progress.md with phase tracking, session-handoff.md with handoff structure, feature-list.json with story-level tracking",
+      "files": [],
+      "expectations": [
+        "progress.md includes phase field and constitution compliance section",
+        "session-handoff.md includes feature state table and recommended next steps",
+        "feature-list.json tracks stories within features with individual status",
+        "Two-step save invariant explained (topic file then index)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Harness Assessment",
+      "prompt": "I have an existing AGENTS.md but my agent still breaks things. Assess my harness against the hybrid framework and tell me what to improve.",
+      "expected_output": "Five-subsystem assessment with scores 1-5, gate compliance check, prioritized improvement plan",
+      "files": ["existing-AGENTS.md"],
+      "expectations": [
+        "Assessment covers all 5 subsystems: Instructions, State, Verification, Scope, Lifecycle",
+        "Each subsystem scored 1-5 with justification",
+        "Implementation readiness gate compliance checked",
+        "Constitution presence and quality assessed",
+        "Spec-driven workflow maturity evaluated",
+        "Prioritized improvement plan with 3 concrete next steps"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Verification Workflow Design",
+      "prompt": "My agent says 'done' but the tests fail. Design a verification workflow that prevents false completion claims.",
+      "expected_output": "Verification checklist integrated into AGENTS.md, evidence requirements, constitution compliance check",
+      "files": [],
+      "expectations": [
+        "Verification checklist includes: tests, type-check, self-review, constitution compliance",
+        "Definition of Done requires evidence, not just claims",
+        "Session end protocol includes verification evidence recording",
+        "Constitution Article V (Verify Before Declare) is referenced"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Memory Taxonomy Design",
+      "prompt": "Design a memory taxonomy for my agent. What should it remember, what should it forget, and where does each type live?",
+      "expected_output": "Memory layer definitions, what to save vs skip, file locations for each type",
+      "files": [],
+      "expectations": [
+        "Three locations defined: docs/specs/ (human+AI), docs/harness/ (AI auto), .claude/skills/ (dev install)",
+        "Spec artifacts are version-controlled, harness ops are session-updated",
+        "Clear guidance on what NOT to save (derivable content, git history)",
+        "Progressive disclosure: link don't embed"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Constitution Creation",
+      "prompt": "My team has unwritten conventions. Help me create a constitution that captures them as enforceable rules for our AI agent.",
+      "expected_output": "constitution.md with 5-9 articles derived from team conventions, each article with concrete enforcement mechanism",
+      "files": [],
+      "expectations": [
+        "Asks about team conventions before writing constitution",
+        "Each article is specific and enforceable (not vague aspirations)",
+        "Articles cover: development philosophy, scope control, quality gates, documentation",
+        "Includes customization guidance (add/remove articles per project)"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Implementation Readiness Gate",
+      "prompt": "I want to start coding but I'm not sure we're ready. Run the implementation readiness gate on my project.",
+      "expected_output": "Gate checklist results with PASS/CONCERNS/FAIL for each category, specific gaps identified, recommended actions",
+      "files": ["docs/specs/features/001-*/spec.md", "docs/specs/architecture.md"],
+      "expectations": [
+        "Checks all 5 gate categories: spec completeness, architecture alignment, scope clarity, constitution compliance, environment",
+        "Returns explicit GATE:PASS/CONCERNS/FAIL verdict",
+        "If CONCERNS or FAIL, specifies exactly what to fix and which phase to return to",
+        "Gate takes feature scope, not task scope"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Full Cycle — Spec to Implementation",
+      "prompt": "I need to add a 'search documents' feature to my app. Take me through the full workflow from spec to implementation.",
+      "expected_output": "spec.md → clarification.md → plan.md → tasks.md → implementation with verification",
+      "files": [],
+      "expectations": [
+        "Starts with /specify (WHAT + WHY, no tech details)",
+        "Identifies at least 2 [NEEDS CLARIFICATION] items",
+        "/clarify resolves them with structured Q&A",
+        "/plan creates architecture decisions and story breakdown",
+        "Runs implementation readiness gate before coding",
+        "/tasks creates testable, 30-60 min tasks",
+        "Verification checklist completed before marking done"
+      ]
+    }
+  ]
+}

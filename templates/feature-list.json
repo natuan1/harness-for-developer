@@ -1,0 +1,51 @@
+{
+  "project": "[project-name]",
+  "constitution_path": "docs/specs/constitution.md",
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Document Import",
+      "description": "Allow users to import PDF and TXT documents from local filesystem",
+      "dependencies": [],
+      "status": "not-started",
+      "gate_status": "pending",
+      "spec_path": "docs/specs/features/001-document-import/spec.md",
+      "stories": [
+        {
+          "id": "story-001-1",
+          "name": "File dialog and selection",
+          "status": "not-started",
+          "evidence": ""
+        },
+        {
+          "id": "story-001-2",
+          "name": "File copy to data directory",
+          "status": "not-started",
+          "evidence": ""
+        }
+      ],
+      "acceptance_criteria": [
+        "User can select PDF or TXT files via file dialog",
+        "Selected files are copied to project data directory",
+        "Import progress shown in UI"
+      ],
+      "evidence": ""
+    },
+    {
+      "id": "feat-002",
+      "name": "Document Chunking",
+      "description": "Split imported documents into ~500 character chunks with metadata",
+      "dependencies": ["feat-001"],
+      "status": "not-started",
+      "gate_status": "pending",
+      "spec_path": "docs/specs/features/002-document-chunking/spec.md",
+      "stories": [],
+      "acceptance_criteria": [
+        "Documents split into chunks of approximately 500 characters",
+        "Each chunk has metadata: word count, line count, paragraph count",
+        "Chunks preserve source document reference"
+      ],
+      "evidence": ""
+    }
+  ]
+}
